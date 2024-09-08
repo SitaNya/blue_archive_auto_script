@@ -125,8 +125,8 @@ class Connection:
         except IndexError:
             ip = "127.0.0.1"
             port = "0"
-        self.config_set.set('adbIP', ip)
-        self.config_set.set('adbPort', port)
+        self.config_set.set_origin('adbIP', ip)
+        self.config_set.set_origin('adbPort', port)
         self.adbIP = ip
         self.adbPort = port
         self.serial = ip + ':' + port
@@ -159,7 +159,7 @@ class Connection:
             self.auto_detect_package()
             package_exist = True
         server = self.config['server']
-        if server == '官服' or server == 'B服':
+        if server == '官服' or server == 'B服' or server == 'uooc':
             self.server = 'CN'
         elif server == '国际服' or server == '国际服青少年' or server == '韩国ONE':
             self.server = 'Global'

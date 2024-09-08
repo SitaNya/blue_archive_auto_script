@@ -104,6 +104,7 @@ if __name__ == '__main__':
     tt.static_config = t.static_config
     tt.init_all_data()
     tt.ocr = t.ocr
+    tt.solve("uooc")
     # tt.thread_starter()
     # tt.solve("refresh_uiautomator2")
     # tt.solve("explore_activity_challenge")
@@ -130,5 +131,5 @@ if __name__ == '__main__':
     # tt.solve("scrimmage")
     # tt.solve("rewarded_task")
     # tt.solve("create")
-    tt.solve("dailyGameActivity")
+    # tt.solve("dailyGameActivity")
     # tt.solve("friend")

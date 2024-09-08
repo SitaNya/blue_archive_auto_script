@@ -6,6 +6,9 @@ from core import image
 
 
 def wait_loading(self):
+    if self.package_name == "uooconline.com.education":
+        self.latest_img_array = self.get_screenshot_array()
+        return
     t_start = time.time()
     while self.flag_run:
         screenshot_interval = time.time() - self.latest_screenshot_time

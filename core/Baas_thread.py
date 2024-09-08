@@ -58,6 +58,7 @@ func_dict = {
     'explore_activity_mission': module.explore_activity_mission.implement,
     'dailyGameActivity': module.dailyGameActivity.implement,
     'friend': module.friend.implement,
+    'uooc': module.uooc_script.implement,
 }
 
 
@@ -137,8 +138,8 @@ class Baas_thread:
             click_y = y + noisey
             click_x = max(0, click_x)
             click_y = max(0, click_y)
-            click_x = int(min(1280, click_x) * self.ratio)
-            click_y = int(min(720, click_y) * self.ratio)
+            # click_x = int(min(1280, click_x) * self.ratio)
+            # click_y = int(min(720, click_y) * self.ratio)
             self.control.click(click_x, click_y)
             if duration > 0:
                 time.sleep(duration)

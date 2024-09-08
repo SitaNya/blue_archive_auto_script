@@ -25,7 +25,7 @@ class ConfigSet:
             self.server_mode = 'Global'
         elif self.config['server'] == '日服':
             self.server_mode = 'JP'
-        
+
     def get(self, key):
         self._init_config()
         value = self.config.get(key)
@@ -34,6 +34,12 @@ class ConfigSet:
     def set(self, key, value):
         self._init_config()
         value = bt.undo(value)
+        self.config[key] = value
+        with open(f'./config/{self.config_dir}/config.json', 'w', encoding='utf-8') as f:
+            json.dump(self.config, f, indent=4, ensure_ascii=False)
+
+    def set_origin(self, key, value):
+        self._init_config()
         self.config[key] = value
         with open(f'./config/{self.config_dir}/config.json', 'w', encoding='utf-8') as f:
             json.dump(self.config, f, indent=4, ensure_ascii=False)

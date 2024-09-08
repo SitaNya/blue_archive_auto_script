@@ -345,7 +345,8 @@ class NemuClient:
             int, int
         """
         x, y = int(x), int(y)
-        x, y = self.height - y, x
+        if self.width > self.height:
+            x, y = self.height - y, x
         return x, y
 
     def down(self, x, y):
@@ -356,7 +357,6 @@ class NemuClient:
             self.connect()
         if self.height == 0:
             self.get_resolution()
-
         x, y = self.convert_xy(x, y)
 
         ret = self.ev_run_sync(
@@ -414,7 +414,7 @@ if __name__ == '__main__':
     nemu = NemuClient.get_instance("H:/MuMuPlayer-12.0", 0, logger)
     while True:
         t1 = time.time()
-        nemu.down(720, 360)
+        nemu.down(362, 1250)
         time.sleep(0.015)
         nemu.up()
         print(f'{time.time() - t1:.3f}s')

@@ -687,7 +687,8 @@ STATIC_DEFAULT_CONFIG = '''
         "国际服": "com.nexon.bluearchive",
         "国际服青少年": "com.nexon.bluearchiveteen",
         "韩国ONE": "com.nexon.bluearchiveone",
-        "日服": "com.YostarJP.BlueArchive"
+        "日服": "com.YostarJP.BlueArchive",
+        "uooc": "uooconline.com.education"
     },
     "activity_name": {
         "官服": "com.yostar.sdk.bridge.YoStarUnityPlayerActivity",
@@ -695,7 +696,8 @@ STATIC_DEFAULT_CONFIG = '''
         "国际服": ".MxUnityPlayerActivity",
         "国际服青少年": ".MxUnityPlayerActivity",
         "韩国ONE": ".MxUnityPlayerActivity",
-        "日服": "com.yostarjp.bluearchive.MxUnityPlayerActivity"
+        "日服": "com.yostarjp.bluearchive.MxUnityPlayerActivity",
+        "uooc": ".ui.MainActivity"
     },
     "total_assault_difficulties": {
         "CN": [ "NORMAL", "HARD", "VERYHARD", "HARDCORE", "EXTREME", "INSANE"],

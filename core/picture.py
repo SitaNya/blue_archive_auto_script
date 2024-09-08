@@ -96,14 +96,14 @@ def co_detect(self, rgb_ends=None, rgb_possibles=None, img_ends=None, img_possib
                     break
         if f == 1:
             continue
-        if not deal_with_pop_ups(self, rgb_pop_ups, img_pop_ups):
-            if tentitive_click:
-                fail_cnt += 1
-                if fail_cnt > max_fail_cnt:
-                    self.logger.info("tentative clicks")
-                    self.click(tentitivex, tentitivey)
-                    time.sleep(self.screenshot_interval)
-                    fail_cnt = 0
+        # if not deal_with_pop_ups(self, rgb_pop_ups, img_pop_ups):
+        #     if tentitive_click:
+        #         fail_cnt += 1
+        #         if fail_cnt > max_fail_cnt:
+        #             self.logger.info("tentative clicks")
+        #             self.click(tentitivex, tentitivey)
+        #             time.sleep(self.screenshot_interval)
+        #             fail_cnt = 0
 
 
 def deal_with_pop_ups(self, rgb_pop_ups, img_pop_ups):
