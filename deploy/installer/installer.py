@@ -1,23 +1,23 @@
-import os
-import sys
-import shutil
-import logging
-import zipfile
-import platform
-import psutil
 import argparse
-import requests
-import threading
-import traceback
+import logging
+import os
+import platform
+import shutil
 import subprocess
-from tqdm import tqdm
+import sys
+import traceback
+import zipfile
+
+import psutil
+import requests
 from dulwich import porcelain
 from dulwich.repo import Repo
+from tqdm import tqdm
 
 # For Gitee download links, replace 'blob' with 'raw'
 TMP_PATH = 'tmp'
 GET_PYTHON_URL = 'https://gitee.com/pur1fy/blue_archive_auto_script_assets/raw/master/python-3.9.13-embed-amd64.zip'
-REPO_URL_HTTP = 'https://gitee.com/pur1fy/blue_archive_auto_script.git'
+REPO_URL_HTTP = 'https://github.com/SitaNya/blue_archive_auto_script.git'
 GET_PIP_URL = 'https://gitee.com/pur1fy/blue_archive_auto_script_assets/raw/master/get-pip.py'
 GET_ATX_URL = 'https://gitee.com/pur1fy/blue_archive_auto_script_assets/raw/master/ATX.apk'
 GET_ENV_PATCH_URL = 'https://gitee.com/kiramei/blue_archive_auto_script_assets/raw/master/env_patch.zip'
