@@ -75,15 +75,6 @@ def getImageByName(self, name):
     return position.image_dic[self.server][name]
 
 
-def click_to_disappear(self, img_possible, x, y):
-    msg = 'find : ' + img_possible
-    while self.flag_run and compare_image(self, img_possible, need_log=False):
-        self.logger.info(msg)
-        self.click(x, y, wait_over=True)
-        self.latest_img_array = self.get_screenshot_array()
-    return True
-
-
 def search_in_area(self, name, area=(0, 0, 1280, 720), threshold=0.8, rgb_diff=20):
     # search image "name" in area, return upper left point of template image if found, else return False
     if name not in position.image_dic[self.server]:
@@ -105,8 +96,17 @@ def search_in_area(self, name, area=(0, 0, 1280, 720), threshold=0.8, rgb_diff=2
         res_average_rgb[1] - ss_average_rgb[1]) > rgb_diff or abs(res_average_rgb[2] - ss_average_rgb[2]) > rgb_diff:
         return False
 
-    upper_left = (max_loc[0] + area[0], max_loc[1] + area[1])
-    return upper_left
+    center = (max_loc[0] + area[0], max_loc[1] + area[1])
+    return center
+
+
+def click_to_disappear(self, img_possible, x, y):
+    msg = 'find : ' + img_possible
+    while self.flag_run and compare_image(self, img_possible, need_log=False):
+        self.logger.info(msg)
+        self.click(x, y, wait_over=True)
+        self.latest_img_array = self.get_screenshot_array()
+    return True
 
 
 def search_image_in_area(self, image, area=(0, 0, 1280, 720), threshold=0.8, rgb_diff=20):
